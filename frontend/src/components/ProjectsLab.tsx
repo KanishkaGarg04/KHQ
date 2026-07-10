@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { FaGithub } from "react-icons/fa";
+import { ExternalLink } from "lucide-react";
 
 const specimens = [
   {
@@ -83,7 +84,7 @@ export default function ProjectsLab() {
                     whileHover={{ scale: 1.05 }}
                     className="flex-1 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center gap-3"
                   >
-                    <Github size={20} />
+                    <FaGithub size={20} />
                     VIEW SOURCE
                   </motion.button>
                 </div>

@@ -15,3 +15,6 @@ body {
 .glow-purple {
   text-shadow: 0 0 20px #c026d3, 0 0 40px #c026d3;
 }
+html {
+  scroll-behavior: smooth;
+}
