@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { SectionHeader } from "./SectionHeader";
 
 export function Contact() {
@@ -55,10 +56,30 @@ export function Contact() {
         {/* Direct channels */}
         <div className="space-y-4 lg:col-span-2">
           {[
-            { Icon: Mail, label: "Email", v: "kanishka@labs.dev", color: "var(--neon-cyan)" },
-            { Icon: Github, label: "GitHub", v: "github.com/kanishkagarg", color: "var(--neon-violet)" },
-            { Icon: Linkedin, label: "LinkedIn", v: "/in/kanishkagarg", color: "var(--neon-cyan)" },
-            { Icon: Twitter, label: "X / Twitter", v: "@kanishkalabs", color: "var(--neon-magenta)" },
+            {
+  Icon: Mail,
+  label: "Email",
+  v: "kanishkagarg0410@gmail.com",
+  color: "var(--neon-cyan)",
+},
+{
+  Icon: FaGithub,
+  label: "GitHub",
+  v: "github.com/KanishkaGarg04",
+  color: "var(--neon-violet)",
+},
+{
+  Icon: FaLinkedin,
+  label: "LinkedIn",
+  v: "https://www.linkedin.com/in/kanishka-garg-65b086307/",
+  color: "var(--neon-cyan)",
+},
+{
+  Icon: FaTwitter,
+  label: "X / Twitter",
+  v: "@kanishkaG04",
+  color: "var(--neon-magenta)",
+},
           ].map(({ Icon, label, v, color }, i) => (
             <motion.a
               key={label}

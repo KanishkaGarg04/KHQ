@@ -1,8 +1,13 @@
 # Dependencies
 node_modules/
 
-# Build output
+# Production builds
 dist/
+build/
+.output/
+
+# TanStack generated/cache files
+.tanstack/
 
 # Environment variables
 .env
@@ -12,17 +17,43 @@ dist/
 .env.production.local
 
 # Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
+bun-debug.log*
 
-# Editor folders/files
-.vscode/
-.idea/
-*.swp
-*.swo
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Vite
+.vite/
+
+# TypeScript
+*.tsbuildinfo
 
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# IDE / editors
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+
+# Debug
+debug/

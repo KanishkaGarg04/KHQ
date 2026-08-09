@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, FlaskConical, Wrench, AlertTriangle, Lightbulb, Cpu } from "lucide-react";
+import {
+  ExternalLink,
+  FlaskConical,
+  Wrench,
+  AlertTriangle,
+  Lightbulb,
+  Cpu,
+} from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { SectionHeader } from "./SectionHeader";
 
 const PROJECTS = [
@@ -8,8 +16,8 @@ const PROJECTS = [
     name: "KrishiMitra AI",
     tag: "AI · Agriculture · Team Project",
 
-    github: "YOUR_GITHUB_LINK",
-    demo: "YOUR_LIVE_LINK",
+    github: "https://github.com/KanishkaGarg04/Krishi_AI",
+    demo: " https://krishi-ai-sepia.vercel.app/",
 
     problem:
       "Farmers often rely on scattered information for crop planning, fertilizer selection, disease diagnosis, and market prices. KrishiMitra brings these capabilities together in a single AI-powered platform.",
@@ -51,8 +59,8 @@ const PROJECTS = [
     name: "MedScan AI",
     tag: "Healthcare · AI",
 
-    github: "YOUR_GITHUB_LINK",
-    demo: "YOUR_LIVE_LINK",
+    github: "https://github.com/KanishkaGarg04/MedScan",
+    demo: " https://med-scan-topaz.vercel.app/",
 
     problem:
       "Patients often struggle to understand complex medical reports. MedScan converts uploaded reports into simplified AI-generated health insights.",
@@ -93,8 +101,8 @@ const PROJECTS = [
     name: "Prapti AI",
     tag: "FinTech · AI",
 
-    github: "YOUR_GITHUB_LINK",
-    demo: "YOUR_LIVE_LINK",
+    github: "https://github.com/KanishkaGarg04/Prapti_AI",
+    demo: " https://prapti-ai-nu.vercel.app/",
 
     problem:
       "Managing debt and financial planning is difficult without intelligent insights. Prapti AI helps users understand financial health and debt risks using AI-driven analysis.",
@@ -191,7 +199,7 @@ export function ProjectsLab() {
                     <ExternalLink className="h-4 w-4" />
                   </a>
                   <a className="glass rounded-full p-2 transition hover:glow-cyan" href="#" aria-label="GitHub">
-                    <Github className="h-4 w-4" />
+                    <FaGithub className="h-4 w-4" />
                   </a>
                 </div>
               </div>
