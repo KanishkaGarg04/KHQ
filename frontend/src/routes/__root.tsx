@@ -14,23 +14,27 @@ import { reportError } from "../lib/error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-6xl font-bold">404</h1>
+    <div className="flex min-h-screen w-full items-center justify-center px-4 py-12">
+      <div className="w-full max-w-lg text-center">
+        <div className="font-mono text-5xl font-bold text-cyan sm:text-6xl">
+          404
+        </div>
 
-      <h2 className="mt-4 text-2xl font-semibold">
-        Page not found
-      </h2>
+        <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">
+          Page not found
+        </h2>
 
-      <p className="mt-2 max-w-md text-muted-foreground">
-        The page you're looking for doesn't exist or has been moved.
-      </p>
+        <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground sm:text-base">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
 
-      <Link
-        to="/"
-        className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-      >
-        Go home
-      </Link>
+        <Link
+          to="/"
+          className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+        >
+          Go home
+        </Link>
+      </div>
     </div>
   );
 }
@@ -53,33 +57,39 @@ function ErrorComponent({
   }, [error]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-3xl font-bold">
-        This page didn't load
-      </h1>
+    <div className="flex min-h-screen w-full items-center justify-center px-4 py-12">
+      <div className="w-full max-w-lg text-center">
+        <div className="font-mono text-5xl font-bold text-magenta sm:text-6xl">
+          ERROR
+        </div>
 
-      <p className="mt-3 max-w-md text-muted-foreground">
-        Something went wrong on our end. You can try refreshing or head back
-        home.
-      </p>
+        <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">
+          This page didn't load
+        </h2>
 
-      <div className="mt-6 flex gap-3">
-        <button
-          onClick={() => {
-            router.invalidate();
-            reset();
-          }}
-          className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-        >
-          Try again
-        </button>
+        <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground sm:text-base">
+          Something went wrong on our end. You can try refreshing or head back
+          home.
+        </p>
 
-        <Link
-          to="/"
-          className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"
-        >
-          Go home
-        </Link>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+          >
+            Try again
+          </button>
+
+          <Link
+            to="/"
+            className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent sm:w-auto"
+          >
+            Go home
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -90,7 +100,9 @@ export const Route = createRootRouteWithContext<{
 }>()({
   head: () => ({
     meta: [
-      { charSet: "utf-8" },
+      {
+        charSet: "utf-8",
+      },
       {
         name: "viewport",
         content: "width=device-width, initial-scale=1",

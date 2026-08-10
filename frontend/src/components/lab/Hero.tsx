@@ -36,7 +36,7 @@ const METRICS = [
   },
   {
     label: "Coding Problems solved by EOY",
-    value: 250,
+    value: 100,
     icon: Code2,
     color: "var(--neon-violet)",
   },
@@ -219,7 +219,7 @@ export function Hero() {
                 <span className="font-display text-base font-semibold tracking-wide">ACTIVE</span>
               </div>
               <div className="mt-2 font-mono text-[10px] text-muted-foreground">
-                Bengaluru, IN · Open to relocate · Summer '26
+                Bhopal, IN · Open to relocate · Year '26
               </div>
             </div>
           </div>
