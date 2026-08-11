@@ -47,9 +47,9 @@ const PROJECTS = [
       "Built collaboratively in a team of two. Learned API integration, AI model deployment, backend architecture, authentication, and effective team collaboration throughout development.",
 
     metrics: [
-      { k: "Team", v: "2" },
+      { k: "Team", v: "4" },
       { k: "AI Modules", v: "4" },
-      { k: "Hackathon", v: "AMD Slingshot" }
+      { k: "Hackathon", v: "IEEE" }
     ],
 
     color: "var(--neon-cyan)",
