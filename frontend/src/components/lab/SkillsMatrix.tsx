@@ -12,49 +12,87 @@ type Node = {
 };
 
 const NODES: Node[] = [
-  { id: "JavaScript", x: 50, y: 50, group: "core", size: 1.3 },
+  // Core
+  { id: "JavaScript", x: 48, y: 48, group: "core", size: 1.3 },
+  { id: "Java", x: 13, y: 28, group: "core" },
+  { id: "TypeScript", x: 72, y: 42, group: "core" },
 
-  { id: "React.js", x: 25, y: 30, group: "frontend" },
-  { id: "Tailwind CSS", x: 18, y: 55, group: "frontend" },
+  // Frontend
+  { id: "React.js", x: 28, y: 28, group: "frontend" },
+  { id: "Next.js", x: 24, y: 50, group: "frontend" },
+  { id: "Tailwind CSS", x: 22, y: 70, group: "frontend" },
 
-  { id: "Node.js", x: 76, y: 28, group: "backend" },
-  { id: "Express.js", x: 84, y: 52, group: "backend" },
-  { id: "MongoDB", x: 72, y: 76, group: "backend" },
+  // Backend
+  { id: "Node.js", x: 72, y: 25, group: "backend" },
+  { id: "Express.js", x: 84, y: 45, group: "backend" },
+  { id: "REST APIs", x: 80, y: 65, group: "backend" },
+  { id: "Socket.IO", x: 67, y: 76, group: "backend" },
 
-  { id: "Python", x: 25, y: 78, group: "ai" },
-  { id: "Flask", x: 42, y: 88, group: "ai" },
+  // Python / AI
+  { id: "Python", x: 35, y: 84, group: "ai" },
+  { id: "Flask", x: 50, y: 90, group: "ai" },
+  { id: "Machine Learning", x: 50, y: 14, group: "ml" },
+  { id: "YOLOv8", x: 70, y: 10, group: "ml" },
+  { id: "LSTM", x: 86, y: 15, group: "ml" },
+  { id: "Gemini AI", x: 88, y: 82, group: "ml" },
+  { id: "OCR", x: 63, y: 92, group: "ml" },
 
-  { id: "Machine Learning", x: 50, y: 15, group: "ml" },
-  { id: "Gemini AI", x: 70, y: 12, group: "ml" },
-  { id: "OCR", x: 86, y: 18, group: "ml" },
+  // Databases
+  { id: "MongoDB", x: 92, y: 58, group: "database" },
+  { id: "PostgreSQL", x: 57, y: 62, group: "database" },
+  { id: "Prisma", x: 45, y: 68, group: "database" },
+  { id: "SQL", x: 37, y: 62, group: "database" },
 
-  { id: "Java", x: 10, y: 32, group: "core" },
-  { id: "SQL", x: 60, y: 90, group: "database" },
-  { id: "Git/GitHub", x: 10, y: 72, group: "tools" },
+  // Tools
+  { id: "Git/GitHub", x: 10, y: 82, group: "tools" },
 ];
 
 const EDGES: [string, string][] = [
+  // Core → Frontend
   ["JavaScript", "React.js"],
-  ["JavaScript", "Tailwind CSS"],
+  ["JavaScript", "Next.js"],
   ["JavaScript", "Node.js"],
+  ["JavaScript", "TypeScript"],
 
+  // Frontend
+  ["React.js", "Next.js"],
   ["React.js", "Tailwind CSS"],
 
+  // Backend
+  ["TypeScript", "Node.js"],
   ["Node.js", "Express.js"],
-  ["Express.js", "MongoDB"],
+  ["Express.js", "REST APIs"],
+  ["REST APIs", "Socket.IO"],
 
+  // Backend → Database
+  ["Express.js", "MongoDB"],
+  ["REST APIs", "PostgreSQL"],
+  ["TypeScript", "Prisma"],
+  ["Prisma", "PostgreSQL"],
+  ["SQL", "PostgreSQL"],
+
+  // Python / AI
   ["Python", "Flask"],
   ["Python", "Machine Learning"],
+  ["Flask", "REST APIs"],
+  ["Machine Learning", "YOLOv8"],
+  ["Machine Learning", "LSTM"],
   ["Machine Learning", "Gemini AI"],
-  ["Machine Learning", "OCR"],
+  ["OCR", "Gemini AI"],
 
+  // Database connections
   ["Flask", "SQL"],
+  ["Python", "SQL"],
 
+  // Cross-stack
   ["JavaScript", "Python"],
   ["Git/GitHub", "React.js"],
   ["Git/GitHub", "Node.js"],
   ["Git/GitHub", "Python"],
+  ["Git/GitHub", "Java"],
+  ["Git/GitHub", "TypeScript"],
 
+  // DSA
   ["Java", "JavaScript"],
 ];
 
@@ -68,29 +106,26 @@ const GROUP_COLOR: Record<string, string> = {
   tools: "var(--neon-cyan)",
 };
 
-const RELATIONS: Record<
-  string,
-  {
-    projects: string[];
-    badges: string[];
-    experience: string[];
-  }
-> = {
-  "JavaScript": {
+type RelationData = {
+  projects: string[];
+  badges: string[];
+  experience: string[];
+};
+
+const RELATIONS: Record<string, RelationData> = {
+  JavaScript: {
     projects: [
       "MedScan AI",
       "KrishiMitra AI",
       "Prapti AI",
       "Clinix",
     ],
-    badges: [
-      "AMD Slingshot Top 10",
-      "ET Gen AI Hackathon Semi-Finalist",
-    ],
+    badges: [],
     experience: [
       "Modern ES6+ JavaScript",
-      "Frontend & Backend Development",
-      "REST API Integration",
+      "Frontend Development",
+      "API Integration",
+      "Full-Stack Application Development",
     ],
   },
 
@@ -103,23 +138,53 @@ const RELATIONS: Record<
     ],
     badges: [],
     experience: [
-      "Component-based UI",
-      "Responsive Design",
+      "Component-Based UI",
+      "Responsive Interfaces",
       "State Management",
+      "API Integration",
+    ],
+  },
+
+  "Next.js": {
+    projects: [
+      "Task Automation Platform",
+      "Portfolio / Lab",
+    ],
+    badges: [],
+    experience: [
+      "React-Based Applications",
+      "Application Routing",
+      "Frontend Architecture",
+      "Production Builds",
     ],
   },
 
   "Tailwind CSS": {
     projects: [
-      "MedScan AI",
       "Prapti AI",
       "Clinix",
+      "Portfolio / Lab",
     ],
     badges: [],
     experience: [
       "Responsive Layouts",
       "Custom UI Systems",
-      "Modern Styling",
+      "Modern Component Styling",
+      "Utility-First CSS",
+    ],
+  },
+
+  TypeScript: {
+    projects: [
+      "Task Automation Platform",
+      "Portfolio / Lab",
+    ],
+    badges: [],
+    experience: [
+      "Typed React Development",
+      "Node.js Backend Development",
+      "API Contracts",
+      "Type-Safe Application Architecture",
     ],
   },
 
@@ -127,12 +192,14 @@ const RELATIONS: Record<
     projects: [
       "MedScan AI",
       "Clinix",
+      "Task Automation Platform",
     ],
     badges: [],
     experience: [
-      "REST APIs",
       "Backend Development",
+      "REST APIs",
       "Authentication",
+      "Asynchronous Task Processing",
     ],
   },
 
@@ -140,15 +207,48 @@ const RELATIONS: Record<
     projects: [
       "MedScan AI",
       "Clinix",
+      "Task Automation Platform",
     ],
     badges: [],
     experience: [
+      "REST API Development",
       "JWT Authentication",
-      "Express REST APIs",
+      "Middleware",
       "Backend Architecture",
     ],
   },
-    "MongoDB": {
+
+  "REST APIs": {
+    projects: [
+      "MedScan AI",
+      "KrishiMitra AI",
+      "Prapti AI",
+      "Clinix",
+      "Task Automation Platform",
+    ],
+    badges: [],
+    experience: [
+      "Frontend ↔ Backend Communication",
+      "CRUD APIs",
+      "Authentication Flows",
+      "API Integration",
+    ],
+  },
+
+  "Socket.IO": {
+    projects: [
+      "Task Automation Platform",
+      "Clinix",
+    ],
+    badges: [],
+    experience: [
+      "Real-Time Status Updates",
+      "Event-Based Communication",
+      "Live Application State",
+    ],
+  },
+
+  MongoDB: {
     projects: [
       "MedScan AI",
       "Clinix",
@@ -158,26 +258,69 @@ const RELATIONS: Record<
       "MongoDB Atlas",
       "Schema Design",
       "CRUD Operations",
+      "Document-Based Data Modeling",
     ],
   },
 
-  "Python": {
+  PostgreSQL: {
+    projects: [
+      "Prapti AI",
+      "Task Automation Platform",
+    ],
+    badges: [],
+    experience: [
+      "Relational Database Design",
+      "Neon PostgreSQL",
+      "Production Database Integration",
+      "Structured Data Modeling",
+    ],
+  },
+
+  Prisma: {
+    projects: [
+      "Task Automation Platform",
+    ],
+    badges: [],
+    experience: [
+      "ORM-Based Database Access",
+      "Schema Modeling",
+      "Type-Safe Queries",
+      "PostgreSQL Integration",
+    ],
+  },
+
+  SQL: {
+    projects: [
+      "KrishiMitra AI",
+      "Task Automation Platform",
+    ],
+    badges: [],
+    experience: [
+      "Relational Data",
+      "Database Design",
+      "SQLAlchemy",
+      "PostgreSQL",
+    ],
+  },
+
+  Python: {
     projects: [
       "KrishiMitra AI",
       "Prapti AI",
     ],
     badges: [
-      "AMD Slingshot Top 10",
-      "ET Gen AI Hackathon Semi-Finalist",
+      "AMD Slingshot — Top 10",
+      "ET Gen AI Hackathon — Semi-Finalist",
     ],
     experience: [
-      "AI Development",
+      "AI Application Development",
       "Backend Logic",
       "Data Processing",
+      "Model Integration",
     ],
   },
 
-  "Flask": {
+  Flask: {
     projects: [
       "KrishiMitra AI",
       "Prapti AI",
@@ -185,8 +328,9 @@ const RELATIONS: Record<
     badges: [],
     experience: [
       "REST API Development",
+      "Python Backend Services",
       "JWT Authentication",
-      "Backend Services",
+      "AI Model Integration",
     ],
   },
 
@@ -196,14 +340,44 @@ const RELATIONS: Record<
       "Prapti AI",
     ],
     badges: [
-      "AMD Slingshot Top 10",
-      "ET Gen AI Hackathon Semi-Finalist",
-      "ICPC Algo Queen (Rank 509)",
+      "AMD Slingshot — Top 10",
+      "ET Gen AI Hackathon — Semi-Finalist",
     ],
     experience: [
-      "LSTM Price Prediction",
-      "YOLOv8 Disease Detection",
+      "Model Training & Integration",
+      "Prediction Pipelines",
       "Recommendation Systems",
+      "AI-Assisted Applications",
+    ],
+  },
+
+  YOLOv8: {
+    projects: [
+      "KrishiMitra AI",
+    ],
+    badges: [
+      "IEEE Hackathon",
+    ],
+    experience: [
+      "Crop Disease Detection",
+      "Computer Vision",
+      "Object Detection",
+      "Model Integration",
+    ],
+  },
+
+  LSTM: {
+    projects: [
+      "KrishiMitra AI",
+    ],
+    badges: [
+      "IEEE Hackathon",
+    ],
+    experience: [
+      "Time-Series Prediction",
+      "Market Price Forecasting",
+      "Sequence Modeling",
+      "Model Integration",
     ],
   },
 
@@ -214,8 +388,9 @@ const RELATIONS: Record<
     badges: [],
     experience: [
       "Medical Report Analysis",
+      "AI-Generated Insights",
       "Prompt Engineering",
-      "AI-generated Insights",
+      "LLM Integration",
     ],
   },
 
@@ -225,35 +400,26 @@ const RELATIONS: Record<
     ],
     badges: [],
     experience: [
-      "Tesseract OCR",
-      "Text Extraction",
       "Medical Document Processing",
+      "Text Extraction",
+      "OCR Pipeline",
+      "AI-Assisted Report Analysis",
     ],
   },
 
   Java: {
     projects: [
       "DSA Practice",
+      "Problem-Solving Practice",
     ],
     badges: [
-      "ICPC Algo Queen (Rank 509)",
+      "ICPC Algo Queen — Rank 509",
     ],
     experience: [
-      "Object-Oriented Programming",
-      "Problem Solving",
       "Data Structures & Algorithms",
-    ],
-  },
-
-  SQL: {
-    projects: [
-      "KrishiMitra AI",
-    ],
-    badges: [],
-    experience: [
-      "SQLAlchemy",
-      "Relational Databases",
-      "Database Design",
+      "Object-Oriented Programming",
+      "Competitive Problem Solving",
+      "Interview Preparation",
     ],
   },
 
@@ -263,52 +429,82 @@ const RELATIONS: Record<
       "MedScan AI",
       "Prapti AI",
       "Clinix",
+      "Task Automation Platform",
+      "Portfolio / Lab",
     ],
     badges: [],
     experience: [
       "Version Control",
       "Branching & Collaboration",
       "GitHub Project Management",
+      "Deployment Workflows",
     ],
   },
 };
+
 export function SkillsMatrix() {
   const [active, setActive] = useState<string | null>(null);
 
   const isConnected = (id: string) =>
-    !active || active === id || EDGES.some(([a, b]) => (a === active && b === id) || (b === active && a === id));
+    !active ||
+    active === id ||
+    EDGES.some(
+      ([a, b]) =>
+        (a === active && b === id) ||
+        (b === active && a === id),
+    );
 
   return (
     <section id="skills" className="relative px-6 py-32 md:px-12">
-     <SectionHeader
-            code="MODULE 03 · SKILL NETWORK"
-            title={
-              <>
-                Every technology in this lab is connected to{" "}
-                <span className="text-holo">real projects</span>.
-              </>
-            }
-            desc="Explore the technologies powering my AI, full-stack, and problem-solving journey. Click any node to trace where I've applied it."
-            accent="magenta"
-          />
+      <SectionHeader
+        code="MODULE 03 · SKILL NETWORK"
+        title={
+          <>
+            Every technology in this lab is connected to{" "}
+            <span className="text-holo">real projects</span>.
+          </>
+        }
+        desc="Trace the technologies behind my full-stack, AI, backend, and problem-solving work. Select any node to see where it was actually used."
+        accent="magenta"
+      />
 
       <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
         {/* Network */}
         <div className="glass relative aspect-[16/11] w-full overflow-hidden rounded-3xl p-6">
           <div className="absolute inset-0 grid-bg opacity-30" />
 
-          <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+          <svg
+            className="absolute inset-0 h-full w-full"
+            preserveAspectRatio="none"
+            viewBox="0 0 100 100"
+          >
             {EDGES.map(([a, b], i) => {
               const A = NODES.find((n) => n.id === a)!;
               const B = NODES.find((n) => n.id === b)!;
-              const lit = active && (active === a || active === b);
+
+              const lit =
+                active &&
+                (active === a || active === b);
+
               return (
                 <line
                   key={i}
-                  x1={A.x} y1={A.y} x2={B.x} y2={B.y}
-                  stroke={lit ? "var(--neon-cyan)" : "oklch(0.85 0.16 200 / 0.2)"}
+                  x1={A.x}
+                  y1={A.y}
+                  x2={B.x}
+                  y2={B.y}
+                  stroke={
+                    lit
+                      ? "var(--neon-cyan)"
+                      : "oklch(0.85 0.16 200 / 0.2)"
+                  }
                   strokeWidth={lit ? 0.35 : 0.15}
-                  style={{ filter: lit ? "drop-shadow(0 0 1px var(--neon-cyan))" : undefined, transition: "all 0.3s" }}
+                  style={{
+                    filter: lit
+                      ? "drop-shadow(0 0 1px var(--neon-cyan))"
+                      : undefined,
+                    transition: "all 0.3s",
+                  }}
                   vectorEffect="non-scaling-stroke"
                 />
               );
@@ -319,41 +515,74 @@ export function SkillsMatrix() {
             const color = GROUP_COLOR[n.group];
             const connected = isConnected(n.id);
             const isActive = active === n.id;
+
             return (
               <motion.button
                 key={n.id}
-                onClick={() => setActive(isActive ? null : n.id)}
+                onClick={() =>
+                  setActive(isActive ? null : n.id)
+                }
                 onMouseEnter={() => setActive(n.id)}
                 className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{ left: `${n.x}%`, top: `${n.y}%` }}
-                animate={{ scale: isActive ? 1.2 : 1, opacity: connected ? 1 : 0.3 }}
-                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                style={{
+                  left: `${n.x}%`,
+                  top: `${n.y}%`,
+                }}
+                animate={{
+                  scale: isActive ? 1.2 : 1,
+                  opacity: connected ? 1 : 0.3,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                }}
               >
                 <div
                   className="flex items-center gap-2 rounded-full border px-3 py-1.5 backdrop-blur-md transition"
                   style={{
                     borderColor: `${color}50`,
-                    background: `oklch(0.16 0.03 260 / 0.6)`,
-                    boxShadow: isActive ? `0 0 24px ${color}` : `0 0 0 1px ${color}30`,
+                    background:
+                      "oklch(0.16 0.03 260 / 0.6)",
+                    boxShadow: isActive
+                      ? `0 0 24px ${color}`
+                      : `0 0 0 1px ${color}30`,
                   }}
                 >
-                  <span className="h-2 w-2 rounded-full" style={{ background: color, boxShadow: `0 0 8px ${color}` }} />
-                  <span className="font-mono text-[11px]" style={{ fontSize: (n.size ?? 1) * 11 }}>{n.id}</span>
+                  <span
+                    className="h-2 w-2 rounded-full"
+                    style={{
+                      background: color,
+                      boxShadow: `0 0 8px ${color}`,
+                    }}
+                  />
+
+                  <span
+                    className="font-mono text-[11px]"
+                    style={{
+                      fontSize: `${(n.size ?? 1) * 11}px`,
+                    }}
+                  >
+                    {n.id}
+                  </span>
                 </div>
               </motion.button>
             );
           })}
 
-                  <div className="absolute bottom-4 left-4 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                    {active
-                      ? `> analyzing :: ${active}`
-                      : "> select a technology to inspect"}
-                  </div>
+          <div className="absolute bottom-4 left-4 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+            {active
+              ? `> analyzing :: ${active}`
+              : "> select a technology to inspect"}
+          </div>
         </div>
 
-        {/* Relations panel */}
+        {/* Relations Panel */}
         <div className="glass-strong relative overflow-hidden rounded-3xl p-6">
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan">▸ Relation Trace</div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan">
+            ▸ Relation Trace
+          </div>
+
           <AnimatePresence mode="wait">
             {active && RELATIONS[active] ? (
               <motion.div
@@ -363,22 +592,27 @@ export function SkillsMatrix() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                <h3 className="mt-2 font-display text-2xl font-semibold">{active}</h3>
+                <h3 className="mt-2 font-display text-2xl font-semibold">
+                  {active}
+                </h3>
+
                 <RelationRow
                   icon={FlaskConical}
                   label="Projects shipped"
                   color="var(--neon-cyan)"
                   items={RELATIONS[active].projects}
                 />
+
                 <RelationRow
                   icon={Trophy}
                   label="Badges earned"
                   color="var(--neon-magenta)"
                   items={RELATIONS[active].badges}
                 />
+
                 <RelationRow
                   icon={Briefcase}
-                  label="Experience"
+                  label="Applied experience"
                   color="var(--neon-violet)"
                   items={RELATIONS[active].experience}
                 />
@@ -391,12 +625,16 @@ export function SkillsMatrix() {
                 exit={{ opacity: 0 }}
                 className="mt-4 text-sm text-muted-foreground"
               >
-                Every technology in this network has been applied in one or more real
-                projects, hackathons, or coding practice. Select a node to inspect its
-                connections.
+                Every node represents a technology I've actually
+                worked with across projects, hackathons, backend
+                systems, or DSA practice.
 
                 <div className="mt-6 grid grid-cols-3 gap-2">
-                  {["React.js", "Node.js", "Machine Learning"].map((s) => (
+                  {[
+                    "React.js",
+                    "Node.js",
+                    "Machine Learning",
+                  ].map((s) => (
                     <button
                       key={s}
                       onClick={() => setActive(s)}
@@ -428,19 +666,29 @@ function RelationRow({
 }) {
   return (
     <div className="mt-5">
-      <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color }}>
+      <div
+        className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em]"
+        style={{ color }}
+      >
         <Icon className="h-3 w-3" />
         {label}
       </div>
+
       {items.length === 0 ? (
-        <p className="mt-2 text-xs text-muted-foreground">— no entries yet, working on it.</p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          — no entries yet, working on it.
+        </p>
       ) : (
         <div className="mt-2 flex flex-wrap gap-1.5">
           {items.map((it) => (
             <span
               key={it}
               className="rounded-md border px-2 py-1 font-mono text-[10px]"
-              style={{ borderColor: `${color}40`, color: "var(--foreground)", background: `${color}10` }}
+              style={{
+                borderColor: `${color}40`,
+                color: "var(--foreground)",
+                background: `${color}10`,
+              }}
             >
               {it}
             </span>

@@ -34,6 +34,16 @@ const FILES = [
     lesson:
       "Every interview exposed another weak spot—DSA, communication, project depth, or fundamentals. Instead of counting rejections, I started treating each one as debugging information. This headquarters exists because of those iterations.",
   },
+  {
+  id: "DEP-401",
+  title: "Production Deployments — Systems Offline",
+  cat: "Engineering",
+  severity: "high",
+  summary:
+    "Several deployed applications broke after moving from local development to production, including authentication failures, API configuration issues, and HTTPS-related problems.",
+  lesson:
+    "A project isn't finished when it works on localhost. Debugging production taught me to think about environment variables, authentication state, API URLs, HTTPS, deployment configuration, and the differences between development and production environments.",
+},
 ];
 
 const SEV: Record<string, { c: string; label: string }> = {

@@ -17,10 +17,10 @@ const PROJECTS = [
     tag: "AI · Agriculture · Team Project",
 
     github: "https://github.com/KanishkaGarg04/Krishi_AI",
-    demo: " https://krishi-ai-sepia.vercel.app/",
+    demo: "https://krishi-ai-sepia.vercel.app/",
 
     problem:
-      "Farmers often rely on scattered information for crop planning, fertilizer selection, disease diagnosis, and market prices. KrishiMitra brings these capabilities together in a single AI-powered platform.",
+      "Agricultural decisions often depend on fragmented information across crop selection, fertilizer usage, plant diseases, and market conditions. KrishiMitra AI brings these workflows together into one intelligent platform that turns user inputs into actionable agricultural insights.",
 
     stack: [
       "React.js",
@@ -30,26 +30,27 @@ const PROJECTS = [
       "SQLAlchemy",
       "YOLOv8",
       "LSTM",
-      "SQLite"
+      "SQLite",
     ],
 
     arch: [
       "React Frontend",
       "Flask REST API",
-      "AI Models",
-      "Database"
+      "AI Inference Layer",
+      "Prediction Models",
+      "Database",
     ],
 
     challenge:
-      "Integrating multiple AI modules—including crop recommendation, fertilizer prediction, disease detection, and market forecasting—into a unified workflow while maintaining smooth communication between the frontend and backend.",
+      "The real challenge was not building a single AI feature, but integrating multiple intelligent modules into one reliable product. Crop recommendation, fertilizer prediction, disease detection using YOLOv8, and market forecasting using LSTM models had to communicate cleanly with the Flask backend and React frontend while keeping authentication and data flow consistent.",
 
     lesson:
-      "Built collaboratively in a team of two. Learned API integration, AI model deployment, backend architecture, authentication, and effective team collaboration throughout development.",
+      "Built as a team project for the IEEE Hackathon. Worked across frontend-backend integration, REST APIs, authentication, database operations, AI model integration, and deployment. The project gave me practical experience turning multiple ML capabilities into a usable full-stack product rather than treating each model as an isolated experiment.",
 
     metrics: [
       { k: "Team", v: "4" },
       { k: "AI Modules", v: "4" },
-      { k: "Hackathon", v: "IEEE" }
+      { k: "Hackathon", v: "IEEE" },
     ],
 
     color: "var(--neon-cyan)",
@@ -57,13 +58,13 @@ const PROJECTS = [
 
   {
     name: "MedScan AI",
-    tag: "Healthcare · AI",
+    tag: "Healthcare · AI · Full Stack",
 
     github: "https://github.com/KanishkaGarg04/MedScan",
-    demo: " https://med-scan-topaz.vercel.app/",
+    demo: "https://med-scan-topaz.vercel.app/",
 
     problem:
-      "Patients often struggle to understand complex medical reports. MedScan converts uploaded reports into simplified AI-generated health insights.",
+      "Medical reports contain valuable information, but their terminology and structure can make them difficult for patients to understand. MedScan AI turns uploaded medical reports into structured, simplified insights using an OCR-to-AI pipeline.",
 
     stack: [
       "React",
@@ -71,27 +72,27 @@ const PROJECTS = [
       "Express",
       "MongoDB",
       "OCR",
-      "Gemini AI"
+      "Gemini AI",
     ],
 
     arch: [
       "React Client",
-      "Express API",
-      "OCR Engine",
+      "Express REST API",
+      "OCR Pipeline",
       "Gemini AI",
-      "MongoDB"
+      "MongoDB",
     ],
 
     challenge:
-      "Extracting accurate text from medical reports while maintaining fast processing and generating meaningful AI summaries.",
+      "The core challenge was building a pipeline that could take an unstructured medical document, extract usable information through OCR, pass the relevant content to an AI system, and return meaningful results through a responsive full-stack application. This required coordinating frontend uploads, backend processing, AI integration, database operations, and authentication.",
 
     lesson:
-      "Learned OCR pipelines, AI integration, secure backend development, REST APIs, and deploying a production-ready MERN application.",
+      "Built and deployed the platform end-to-end, gaining hands-on experience with OCR pipelines, REST API design, backend architecture, AI integration, MongoDB, authentication, and production deployment. The project helped me understand how AI becomes genuinely useful when it is wrapped inside a reliable software system.",
 
     metrics: [
       { k: "OCR", v: "90%+" },
       { k: "AI", v: "<10s" },
-      { k: "Stack", v: "MERN" }
+      { k: "Stack", v: "MERN" },
     ],
 
     color: "var(--neon-violet)",
@@ -99,39 +100,40 @@ const PROJECTS = [
 
   {
     name: "Prapti AI",
-    tag: "FinTech · AI",
+    tag: "FinTech · AI · Hackathon",
 
     github: "https://github.com/KanishkaGarg04/Prapti_AI",
-    demo: " https://prapti-ai-nu.vercel.app/",
+    demo: "https://prapti-ai-nu.vercel.app/",
 
     problem:
-      "Managing debt and financial planning is difficult without intelligent insights. Prapti AI helps users understand financial health and debt risks using AI-driven analysis.",
+      "Financial planning becomes difficult when users have to interpret debt, spending, and financial risk on their own. Prapti AI turns financial data into understandable insights designed to help users evaluate their financial position and make better decisions.",
 
     stack: [
       "React",
       "Flask",
       "Python",
-      "Neon DB",
-      "AI"
+      "Neon PostgreSQL",
+      "AI",
     ],
 
     arch: [
       "React Dashboard",
-      "Flask Backend",
-      "Risk Engine",
-      "Neon Database"
+      "Flask REST API",
+      "Financial Intelligence Layer",
+      "AI Analysis",
+      "Neon Database",
     ],
 
     challenge:
-      "Designing a financial intelligence system capable of analyzing user financial data and presenting meaningful insights through an intuitive interface.",
+      "The challenge was designing a financial intelligence workflow that could take user financial information, process it through backend logic and AI-driven analysis, and present the resulting insights through a clear dashboard. The system had to be built quickly while maintaining a clean separation between the frontend, backend, database, and intelligence layer.",
 
     lesson:
-      "Developed during the AMD Slingshot Hackathon. Strengthened my skills in AI product development, rapid prototyping, teamwork, and presenting technical solutions under strict deadlines.",
+      "Built during the AMD Regional Slingshot Hackathon and selected among the Top 10 teams. The experience pushed me to build and iterate quickly, integrate AI into a real product workflow, design backend APIs, work with a hosted PostgreSQL database through Neon, and communicate a technical solution under strict hackathon constraints.",
 
     metrics: [
       { k: "Award", v: "Top 10" },
       { k: "Hackathon", v: "AMD" },
-      { k: "Focus", v: "FinTech AI" }
+      { k: "Focus", v: "FinTech AI" },
     ],
 
     color: "var(--neon-magenta)",

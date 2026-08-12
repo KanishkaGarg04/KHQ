@@ -5,7 +5,7 @@ import { SectionHeader } from "./SectionHeader";
 const BADGES = [
   {
     icon: Trophy,
-    title: "AMD Slingshot Finalist",
+    title: "AMD Slingshot Top 10",
     sub: "Top 10 Finalist · AI Hackathon",
     rarity: "LEGENDARY",
     color: "var(--neon-magenta)",
@@ -13,8 +13,8 @@ const BADGES = [
   },
   {
     icon: Award,
-    title: "ET Gen AI Hackathon Semi-Finalist",
-    sub: "Economics Times Gen AI Challenge",
+    title: "ET Gen AI Semi-Finalist",
+    sub: "Economic Times Gen AI Challenge",
     rarity: "EPIC",
     color: "var(--neon-violet)",
     unlocked: true,
@@ -29,7 +29,7 @@ const BADGES = [
   },
   {
     icon: Rocket,
-    title: "ICPC Algo Queen Rank 509",
+    title: "ICPC Algo Queen · Rank 509",
     sub: "Global Competitive Programming Contest",
     rarity: "RARE",
     color: "var(--neon-cyan)",
@@ -44,28 +44,28 @@ const BADGES = [
     unlocked: true,
   },
   {
-    icon: Flame,
-    title: "MERN Projects Deployed",
-    sub: "Full-Stack AI Applications in Production",
+    icon: Sparkles,
+    title: "4+ AI Applications Shipped",
+    sub: "Full-Stack AI · MERN · Flask · Python",
     rarity: "RARE",
     color: "var(--neon-magenta)",
     unlocked: true,
   },
   {
-    icon: Zap,
+    icon: GitBranch,
     title: "Open Source Contributor",
-    sub: "Contributed to AI Infrastructure Projects",
+    sub: "Open-source development · Git & GitHub",
     rarity: "RARE",
     color: "var(--neon-violet)",
     unlocked: true,
   },
   {
-    icon: Sparkles,
-    title: "Software Engineer Offer",
-    sub: "Locked · Coming Soon",
-    rarity: "MYTHIC",
+    icon: Zap,
+    title: "100+ LeetCode Problems",
+    sub: "Java · Data Structures & Algorithms",
+    rarity: "RARE",
     color: "var(--neon-cyan)",
-    unlocked: false,
+    unlocked: true,
   },
 ];
 

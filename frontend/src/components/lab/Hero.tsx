@@ -395,11 +395,11 @@ export function Hero() {
       </div>
 
       {/* Bottom band */}
+            {/* Bottom band */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 pb-12 md:px-8">
         <div className="glass flex flex-wrap items-center justify-between gap-3 rounded-2xl px-5 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
           <span className="flex items-center gap-2">
-            <BarChart3 className="h-3 w-3 text-cyan" />
-            Uptime · 24/7 · Coffee-powered
+            <BarChart3 className="h-3 w-3 text-cyan" /> Uptime · 24/7 · Coffee-powered
           </span>
 
           <span className="hidden md:inline">
@@ -407,11 +407,27 @@ export function Hero() {
           </span>
 
           <span className="flex items-center gap-2">
-            <Network className="h-3 w-3 text-violet" />
-            Scroll to enter facility
+            <Network className="h-3 w-3 text-violet" /> Scroll to enter facility
           </span>
         </div>
       </div>
+
+      {/* Facility Introduction */}
+      {/* Facility Introduction */}
+<div className="relative z-10 mx-auto max-w-4xl px-6 pb-24 pt-8 text-center md:px-8">
+  <p className="mx-auto max-w-2xl font-display text-sm leading-relaxed text-muted-foreground md:text-base">
+    Welcome to{" "}
+    <span className="text-holo">Kanishka Labs</span>
+    {" "}— an innovation HQ where ideas are prototyped, tested, and shipped.
+    Explore the modules above.
+  </p>
+
+  <div className="mt-8 flex items-center justify-center gap-4 font-mono text-[9px] uppercase tracking-[0.45em] text-muted-foreground">
+    <span className="h-px w-16 bg-border/70" />
+    <span>-----Scroll to enter facility-----</span>
+    <span className="h-px w-16 bg-border/70" />
+  </div>
+</div>
     </section>
   );
 }
