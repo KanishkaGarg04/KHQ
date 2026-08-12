@@ -5,54 +5,45 @@ import { SectionHeader } from "./SectionHeader";
 import { useState } from "react";
 
 export function Contact() {
-  const [isSending, setIsSending] = useState(false);
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    setIsSending(true);
-    setStatus("idle");
+    setStatus("sending");
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const name = formData.get("name")?.toString().trim();
-    const email = formData.get("email")?.toString().trim();
-    const message = formData.get("message")?.toString().trim();
-
-    if (!name || !email || !message) {
-      setStatus("error");
-      setIsSending(false);
-      return;
-    }
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+    formData.append("subject", "New Portfolio Enquiry — Kanishka Labs");
+    formData.append("from_name", "Kanishka Labs Portfolio");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-        }),
+        body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send enquiry");
-      }
+      const data = await response.json();
 
-      form.reset();
-      setStatus("success");
+      if (data.success) {
+        setStatus("success");
+        form.reset();
+
+        setTimeout(() => {
+          setStatus("idle");
+        }, 4000);
+      } else {
+        console.error(data);
+        setStatus("error");
+      }
     } catch (error) {
-      console.error("Contact form error:", error);
+      console.error(error);
       setStatus("error");
-    } finally {
-      setIsSending(false);
     }
-  }
+  };
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -74,7 +65,7 @@ export function Contact() {
         >
           <div className="flex items-center justify-between border-b border-border pb-3">
             <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              <span className="h-2 w-2 animate-pulse-glow rounded-full bg-cyan" />
+              <span className="h-2 w-2 rounded-full bg-cyan animate-pulse-glow" />
               channel://kanishka.labs · encrypted
             </div>
 
@@ -88,6 +79,7 @@ export function Contact() {
               label="// SENDER"
               placeholder="your name"
               name="name"
+              required
             />
 
             <Field
@@ -95,6 +87,7 @@ export function Contact() {
               placeholder="you@domain.com"
               type="email"
               name="email"
+              required
             />
 
             <div>
@@ -113,32 +106,32 @@ export function Contact() {
 
             <button
               type="submit"
-              disabled={isSending}
-              className="group flex w-full items-center justify-center gap-2 rounded-xl border border-cyan/50 bg-cyan/10 px-4 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyan transition hover:glow-cyan disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={status === "sending"}
+              className="group flex w-full items-center justify-center gap-2 rounded-xl border border-cyan/50 bg-cyan/10 px-4 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyan transition hover:glow-cyan disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {isSending ? "Transmitting..." : "Transmit"}
+              {status === "sending"
+                ? "Transmitting..."
+                : status === "success"
+                  ? "✓ Signal Received"
+                  : status === "error"
+                    ? "Transmission Failed"
+                    : "Transmit"}
 
-              <Send className="h-4 w-4 transition group-hover:translate-x-1" />
+              {status === "idle" || status === "sending" ? (
+                <Send className="h-4 w-4 transition group-hover:translate-x-1" />
+              ) : null}
             </button>
 
             {status === "success" && (
-              <div className="rounded-xl border border-cyan/30 bg-cyan/5 p-3 text-center font-mono text-xs text-cyan">
-                ✓ TRANSMISSION RECEIVED
-                <br />
-                <span className="text-muted-foreground">
-                  Your message has reached Kanishka Labs.
-                </span>
-              </div>
+              <p className="text-center font-mono text-[10px] uppercase tracking-wider text-cyan">
+                Message delivered successfully.
+              </p>
             )}
 
             {status === "error" && (
-              <div className="rounded-xl border border-red-400/30 bg-red-400/5 p-3 text-center font-mono text-xs text-red-400">
-                ✕ TRANSMISSION FAILED
-                <br />
-                <span className="text-muted-foreground">
-                  Please check the fields and try again.
-                </span>
-              </div>
+              <p className="text-center font-mono text-[10px] uppercase tracking-wider text-red-400">
+                Transmission failed. Please try again.
+              </p>
             )}
           </div>
         </motion.form>
@@ -229,13 +222,15 @@ export function Contact() {
 function Field({
   label,
   placeholder,
-  type = "text",
   name,
+  type = "text",
+  required = false,
 }: {
   label: string;
   placeholder: string;
-  type?: string;
   name: string;
+  type?: string;
+  required?: boolean;
 }) {
   return (
     <div>
@@ -247,7 +242,7 @@ function Field({
         name={name}
         type={type}
         placeholder={placeholder}
-        required
+        required={required}
         className="mt-2 w-full rounded-xl border border-border bg-background/40 p-3 font-mono text-sm outline-none transition focus:border-cyan focus:glow-cyan"
       />
     </div>
