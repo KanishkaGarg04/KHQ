@@ -46,7 +46,7 @@ export function Contact() {
   };
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section  id = "contact" className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeader
         code="MODULE 06 · CONTACT TERMINAL"
         title={<>Open a secure channel.</>}
