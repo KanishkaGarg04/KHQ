@@ -61,7 +61,7 @@ const BADGES = [
   },
   {
     icon: Zap,
-    title: "100+ LeetCode Problems",
+    title: "100+ DSA Problems",
     sub: "Java · Data Structures & Algorithms",
     rarity: "RARE",
     color: "var(--neon-cyan)",
