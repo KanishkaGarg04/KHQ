@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="dark relative">
+    <div className="dark relative">
       <Hero />
       <LabStatus />
       <ProjectsLab />
@@ -48,6 +48,6 @@ function Index() {
       <FounderLog />
       <FailureArchive />
       <Contact />
-    </main>
+    </div>
   );
 }
