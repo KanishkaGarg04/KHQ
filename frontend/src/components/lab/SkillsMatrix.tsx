@@ -105,7 +105,6 @@ const GROUP_COLOR: Record<string, string> = {
   database: "var(--neon-violet)",
   tools: "var(--neon-cyan)",
 };
-
 type RelationData = {
   projects: string[];
   badges: string[];
@@ -441,7 +440,6 @@ const RELATIONS: Record<string, RelationData> = {
     ],
   },
 };
-
 export function SkillsMatrix() {
   const [active, setActive] = useState<string | null>(null);
 
@@ -454,8 +452,65 @@ export function SkillsMatrix() {
         (b === active && a === id),
     );
 
+  const mobileCategories = [
+    {
+      name: "Core",
+      group: "core",
+      skills: ["JavaScript", "Java", "TypeScript"],
+    },
+    {
+      name: "Frontend",
+      group: "frontend",
+      skills: ["React.js", "Next.js", "Tailwind CSS"],
+    },
+    {
+      name: "Backend",
+      group: "backend",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "Socket.IO",
+      ],
+    },
+    {
+      name: "AI / Python",
+      group: "ai",
+      skills: ["Python", "Flask"],
+    },
+    {
+      name: "Machine Learning",
+      group: "ml",
+      skills: [
+        "Machine Learning",
+        "YOLOv8",
+        "LSTM",
+        "Gemini AI",
+        "OCR",
+      ],
+    },
+    {
+      name: "Database",
+      group: "database",
+      skills: [
+        "MongoDB",
+        "PostgreSQL",
+        "Prisma",
+        "SQL",
+      ],
+    },
+    {
+      name: "Tools",
+      group: "tools",
+      skills: ["Git/GitHub"],
+    },
+  ];
+
   return (
-    <section id="skills" className="relative px-6 py-32 md:px-12">
+    <section
+      id="skills"
+      className="relative px-4 py-20 sm:px-6 sm:py-24 md:px-12 md:py-32"
+    >
       <SectionHeader
         code="MODULE 03 · SKILL NETWORK"
         title={
@@ -469,8 +524,11 @@ export function SkillsMatrix() {
       />
 
       <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-        {/* Network */}
-        <div className="glass relative aspect-[16/11] w-full overflow-hidden rounded-3xl p-6">
+        {/* ========================================================= */}
+        {/* DESKTOP SKILL NETWORK                                     */}
+        {/* ========================================================= */}
+
+        <div className="glass relative hidden aspect-[16/11] w-full overflow-hidden rounded-3xl p-6 md:block">
           <div className="absolute inset-0 grid-bg opacity-30" />
 
           <svg
@@ -577,8 +635,92 @@ export function SkillsMatrix() {
           </div>
         </div>
 
-        {/* Relations Panel */}
-        <div className="glass-strong relative overflow-hidden rounded-3xl p-6">
+        {/* ========================================================= */}
+        {/* MOBILE SKILL MATRIX                                      */}
+        {/* ========================================================= */}
+
+        <div className="glass relative rounded-3xl p-4 md:hidden">
+          <div className="mb-5 flex items-center justify-between">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan">
+              ▸ Skill Network
+            </div>
+
+            <div className="font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
+              {NODES.length} nodes
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            {mobileCategories.map((category) => {
+              const color = GROUP_COLOR[category.group];
+
+              return (
+                <div key={category.name}>
+                  <div
+                    className="mb-2 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.25em]"
+                    style={{ color }}
+                  >
+                    <span
+                      className="h-1.5 w-1.5 rounded-full"
+                      style={{
+                        background: color,
+                        boxShadow: `0 0 8px ${color}`,
+                      }}
+                    />
+
+                    {category.name}
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => {
+                      const selected = active === skill;
+
+                      return (
+                        <button
+                          key={skill}
+                          onClick={() =>
+                            setActive(
+                              selected ? null : skill,
+                            )
+                          }
+                          className="rounded-lg border px-2.5 py-2 font-mono text-[10px] transition active:scale-95"
+                          style={{
+                            borderColor: selected
+                              ? color
+                              : `${color}40`,
+                            color: selected
+                              ? color
+                              : "var(--foreground)",
+                            background: selected
+                              ? `${color}15`
+                              : "oklch(0.16 0.03 260 / 0.5)",
+                            boxShadow: selected
+                              ? `0 0 12px ${color}40`
+                              : undefined,
+                          }}
+                        >
+                          {skill}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-5 border-t border-border pt-3 font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
+            {active
+              ? `> analyzing :: ${active}`
+              : "> tap a technology to inspect"}
+          </div>
+        </div>
+
+        {/* ========================================================= */}
+        {/* RELATION TRACE                                            */}
+        {/* ========================================================= */}
+
+        <div className="glass-strong relative overflow-hidden rounded-3xl p-5 sm:p-6">
           <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan">
             ▸ Relation Trace
           </div>
@@ -592,7 +734,7 @@ export function SkillsMatrix() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                <h3 className="mt-2 font-display text-2xl font-semibold">
+                <h3 className="mt-2 break-words font-display text-xl font-semibold sm:text-2xl">
                   {active}
                 </h3>
 
@@ -623,13 +765,13 @@ export function SkillsMatrix() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="mt-4 text-sm text-muted-foreground"
+                className="mt-4 text-sm leading-relaxed text-muted-foreground"
               >
-                Every node represents a technology I've actually
-                worked with across projects, hackathons, backend
-                systems, or DSA practice.
+                Every node represents a technology I've
+                actually worked with across projects,
+                hackathons, backend systems, or DSA practice.
 
-                <div className="mt-6 grid grid-cols-3 gap-2">
+                <div className="mt-6 grid grid-cols-1 gap-2 min-[400px]:grid-cols-3">
                   {[
                     "React.js",
                     "Node.js",
@@ -638,7 +780,7 @@ export function SkillsMatrix() {
                     <button
                       key={s}
                       onClick={() => setActive(s)}
-                      className="rounded-lg border border-border bg-secondary/40 px-2 py-1.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground transition hover:text-foreground"
+                      className="rounded-lg border border-border bg-secondary/40 px-2 py-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground transition hover:text-foreground"
                     >
                       explore · {s}
                     </button>
@@ -667,10 +809,10 @@ function RelationRow({
   return (
     <div className="mt-5">
       <div
-        className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em]"
+        className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.25em]"
         style={{ color }}
       >
-        <Icon className="h-3 w-3" />
+        <Icon className="h-3 w-3 shrink-0" />
         {label}
       </div>
 
