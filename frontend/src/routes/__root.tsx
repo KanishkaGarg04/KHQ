@@ -168,13 +168,16 @@ export const Route = createRootRouteWithContext<{
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <>
-      <HeadContent />
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
 
-      {children}
-
-      <Scripts />
-    </>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
   );
 }
 

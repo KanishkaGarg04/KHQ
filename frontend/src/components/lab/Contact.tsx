@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send , FileText } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { SectionHeader } from "./SectionHeader";
 import { useState } from "react";
@@ -161,11 +161,11 @@ export function Contact() {
               color: "var(--neon-cyan)",
             },
             {
-              Icon: FaTwitter,
-              label: "X / Twitter",
-              v: "@kanishkaG04",
-              href: "https://twitter.com/kanishkaG04",
-              color: "var(--neon-magenta)",
+              Icon: FileText,
+              label: "Resume",
+              v: "Access Personnel File",
+              href: "/resume.pdf",
+              color: "var(--neon-cyan)",
             },
           ].map(({ Icon, label, v, href, color }, i) => (
             <motion.a

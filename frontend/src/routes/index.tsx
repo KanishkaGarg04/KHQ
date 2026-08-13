@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 import { Hero } from "@/components/lab/Hero";
+import { BootScreen } from "@/components/lab/BootScreen";
 import { LabStatus } from "@/components/lab/LabStatus";
 import { ProjectsLab } from "@/components/lab/ProjectsLab";
 import { Analytics } from "@/components/lab/Analytics";
@@ -19,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "The live headquarters of Kanishka Garg — projects shipped, hackathons fought, badges earned, failures archived.",
+          "The live headquarters of Kanishka Garg — projects shipped, hackathons fought, badges earned, failures archived. Actively hunting an SDE internship.",
       },
       {
         property: "og:title",
@@ -28,7 +30,15 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Tour the lab: mission dashboard, project chambers, skills network, founder log, failure archive.",
+          "Tour the lab: mission dashboard, project chambers, founder log, failure archive.",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
       },
     ],
   }),
@@ -37,8 +47,14 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [booted, setBooted] = useState(false);
+
   return (
-    <div className="dark relative">
+    <main className="dark relative">
+      {!booted && (
+        <BootScreen onDone={() => setBooted(true)} />
+      )}
+
       <Hero />
       <LabStatus />
       <ProjectsLab />
@@ -48,6 +64,6 @@ function Index() {
       <FounderLog />
       <FailureArchive />
       <Contact />
-    </div>
+    </main>
   );
 }

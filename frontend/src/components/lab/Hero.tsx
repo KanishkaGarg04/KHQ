@@ -424,7 +424,7 @@ export function Hero() {
 
   <div className="mt-8 flex items-center justify-center gap-4 font-mono text-[9px] uppercase tracking-[0.45em] text-muted-foreground">
     <span className="h-px w-16 bg-border/70" />
-    <span>───────Scroll to enter facility───────</span>
+    <span>Scroll to enter facility</span>
     <span className="h-px w-16 bg-border/70" />
   </div>
 </div>
