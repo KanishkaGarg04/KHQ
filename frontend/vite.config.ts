@@ -8,10 +8,9 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
-
   plugins: [
     tanstackStart(),
-    nitro(),        // required for Vercel SSR
+    nitro(),
     react(),
     tailwindcss(),
   ],
