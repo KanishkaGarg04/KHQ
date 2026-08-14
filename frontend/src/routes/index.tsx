@@ -47,23 +47,10 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [booted, setBooted] = useState(false);
-
   return (
-    <main className="dark relative">
-      {!booted && (
-        <BootScreen onDone={() => setBooted(true)} />
-      )}
-
-      <Hero />
-      <LabStatus />
-      <ProjectsLab />
-      <Analytics />
-      <SkillsMatrix />
-      <Achievements />
-      <FounderLog />
-      <FailureArchive />
-      <Contact />
-    </main>
+    <div style={{ padding: "40px", color: "white", background: "black", minHeight: "100vh" }}>
+      <h1>Kanishka Labs</h1>
+      <p>The application is rendering.</p>
+    </div>
   );
 }
