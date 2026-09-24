@@ -242,18 +242,31 @@ export function ProjectsLab() {
                 <FlaskConical className="h-3 w-3" style={{ color: p.color }} />
                 Specimen 0{active + 1} · {p.tag}
               </div>
-              <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
-                <h3 className="font-display text-3xl font-semibold md:text-4xl">{p.name}</h3>
-                <div className="flex gap-2">
-                  <a className="glass rounded-full p-2 transition hover:glow-cyan" href="#" aria-label="Demo">
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                  <a className="glass rounded-full p-2 transition hover:glow-cyan" href="#" aria-label="GitHub">
+              <div className="flex gap-2">
+                  {p.demo && p.demo !== "#" && (
+                    <a
+                      className="glass rounded-full p-2 transition hover:glow-cyan"
+                      href={p.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${p.name} live demo`}
+                      title="Live Demo"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  )}
+
+                  <a
+                    className="glass rounded-full p-2 transition hover:glow-cyan"
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${p.name} GitHub repository`}
+                    title="GitHub Repository"
+                  >
                     <FaGithub className="h-4 w-4" />
                   </a>
                 </div>
-              </div>
-
               <Block icon={AlertTriangle} color={p.color} label="Problem">
                 {p.problem}
               </Block>
