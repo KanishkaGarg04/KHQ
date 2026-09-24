@@ -114,9 +114,9 @@ type RelationData = {
 const RELATIONS: Record<string, RelationData> = {
   JavaScript: {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
       "KrishiMitra AI",
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
     ],
     badges: [],
@@ -130,9 +130,9 @@ const RELATIONS: Record<string, RelationData> = {
 
   "React.js": {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
       "KrishiMitra AI",
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
     ],
     badges: [],
@@ -160,7 +160,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Tailwind CSS": {
     projects: [
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
       "Portfolio / Lab",
     ],
@@ -189,7 +189,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Node.js": {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
       "Clinix",
       "Task Automation Platform",
     ],
@@ -204,7 +204,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Express.js": {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
       "Clinix",
       "Task Automation Platform",
     ],
@@ -219,9 +219,9 @@ const RELATIONS: Record<string, RelationData> = {
 
   "REST APIs": {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
       "KrishiMitra AI",
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
       "Task Automation Platform",
     ],
@@ -249,7 +249,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   MongoDB: {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
       "Clinix",
     ],
     badges: [],
@@ -263,7 +263,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   PostgreSQL: {
     projects: [
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Task Automation Platform",
     ],
     badges: [],
@@ -305,7 +305,7 @@ const RELATIONS: Record<string, RelationData> = {
   Python: {
     projects: [
       "KrishiMitra AI",
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
     ],
     badges: [
       "AMD Slingshot — Top 10",
@@ -322,7 +322,7 @@ const RELATIONS: Record<string, RelationData> = {
   Flask: {
     projects: [
       "KrishiMitra AI",
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
     ],
     badges: [],
     experience: [
@@ -336,7 +336,7 @@ const RELATIONS: Record<string, RelationData> = {
   "Machine Learning": {
     projects: [
       "KrishiMitra AI",
-      "Prapti AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
     ],
     badges: [
       "AMD Slingshot — Top 10",
@@ -382,7 +382,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Gemini AI": {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
     ],
     badges: [],
     experience: [
@@ -395,7 +395,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   OCR: {
     projects: [
-      "MedScan AI",
+      "health-intelligence-report-insights-platform AI",
     ],
     badges: [],
     experience: [
@@ -425,8 +425,8 @@ const RELATIONS: Record<string, RelationData> = {
   "Git/GitHub": {
     projects: [
       "KrishiMitra AI",
-      "MedScan AI",
-      "Prapti AI",
+      "health-intelligence-report-insights-platform AI",
+      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
       "Task Automation Platform",
       "Portfolio / Lab",

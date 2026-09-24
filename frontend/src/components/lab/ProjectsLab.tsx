@@ -57,14 +57,14 @@ const PROJECTS = [
   },
 
   {
-    name: "MedScan AI",
+    name: "health-intelligence-report-insights-platform AI",
     tag: "Healthcare · AI · Full Stack",
 
-    github: "https://github.com/KanishkaGarg04/MedScan",
+    github: "https://github.com/KanishkaGarg04/health-intelligence-report-insights-platform",
     demo: "https://med-scan-topaz.vercel.app/",
 
     problem:
-      "Medical reports contain valuable information, but their terminology and structure can make them difficult for patients to understand. MedScan AI turns uploaded medical reports into structured, simplified insights using an OCR-to-AI pipeline.",
+      "Medical reports contain valuable information, but their terminology and structure can make them difficult for patients to understand. health-intelligence-report-insights-platform AI turns uploaded medical reports into structured, simplified insights using an OCR-to-AI pipeline.",
 
     stack: [
       "React",
@@ -99,14 +99,14 @@ const PROJECTS = [
   },
 
   {
-    name: "Prapti AI",
+    name: "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
     tag: "FinTech · AI · Hackathon",
 
     github: "https://github.com/KanishkaGarg04/Prapti_AI",
     demo: "https://prapti-ai-nu.vercel.app/",
 
     problem:
-      "Financial planning becomes difficult when users have to interpret debt, spending, and financial risk on their own. Prapti AI turns financial data into understandable insights designed to help users evaluate their financial position and make better decisions.",
+      "Financial planning becomes difficult when users have to interpret debt, spending, and financial risk on their own. https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform turns financial data into understandable insights designed to help users evaluate their financial position and make better decisions.",
 
     stack: [
       "React",
