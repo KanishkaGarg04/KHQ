@@ -5,7 +5,7 @@ import { Activity, Flame, Trophy, GitCommit } from "lucide-react";
 const STATS = [
   {
     label: "DSA Problems",
-    value: "100+",
+    value: "300+",
     sub: "Java • DSA Practice",
     icon: Trophy,
     color: "var(--neon-cyan)",

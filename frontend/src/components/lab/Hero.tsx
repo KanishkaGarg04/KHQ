@@ -28,19 +28,19 @@ const NAV = [
 const METRICS = [
   {
     label: "Projects Built",
-    value: 4,
+    value: 5,
     icon: FlaskConical,
     color: "var(--neon-cyan)",
   },
   {
     label: "Coding Problems solved by EOY",
-    value: 100,
+    value: 300,
     icon: Code2,
     color: "var(--neon-violet)",
   },
   {
     label: "Hackathon Finals",
-    value: 3,
+    value: 4,
     icon: Trophy,
     color: "var(--neon-magenta)",
   },
