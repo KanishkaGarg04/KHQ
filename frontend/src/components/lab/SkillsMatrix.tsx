@@ -114,9 +114,10 @@ type RelationData = {
 const RELATIONS: Record<string, RelationData> = {
   JavaScript: {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
+      "Workflow Orchestration & Job Processing Platform",
+      "Financial Risk & Debt Intelligence Platform",
       "KrishiMitra AI",
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
     ],
     badges: [],
@@ -130,9 +131,10 @@ const RELATIONS: Record<string, RelationData> = {
 
   "React.js": {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
+      "Workflow Orchestration & Job Processing Platform",
+      "Financial Risk & Debt Intelligence Platform",
       "KrishiMitra AI",
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
     ],
     badges: [],
@@ -146,7 +148,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Next.js": {
     projects: [
-      "Task Automation Platform",
+      "Workflow Orchestration & Job Processing Platform",
       "Portfolio / Lab",
     ],
     badges: [],
@@ -160,7 +162,10 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Tailwind CSS": {
     projects: [
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
+      "Health Intelligence report insights platform",
+      "Workflow Orchestration & Job Processing Platform",
+      "Financial Risk & Debt Intelligence Platform",
+      "KrishiMitra AI",
       "Clinix",
       "Portfolio / Lab",
     ],
@@ -175,7 +180,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   TypeScript: {
     projects: [
-      "Task Automation Platform",
+      "Workflow Orchestration & Job Processing Platform",
       "Portfolio / Lab",
     ],
     badges: [],
@@ -189,9 +194,10 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Node.js": {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
+      "Workflow Orchestration & Job Processing Platform",
+      "Financial Risk & Debt Intelligence Platform",
       "Clinix",
-      "Task Automation Platform",
     ],
     badges: [],
     experience: [
@@ -204,9 +210,10 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Express.js": {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
+      "Workflow Orchestration & Job Processing Platform",
+      "Financial Risk & Debt Intelligence Platform",
       "Clinix",
-      "Task Automation Platform",
     ],
     badges: [],
     experience: [
@@ -219,11 +226,11 @@ const RELATIONS: Record<string, RelationData> = {
 
   "REST APIs": {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
+      "Workflow Orchestration & Job Processing Platform",
+      "Financial Risk & Debt Intelligence Platform",
       "KrishiMitra AI",
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
-      "Task Automation Platform",
     ],
     badges: [],
     experience: [
@@ -236,7 +243,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Socket.IO": {
     projects: [
-      "Task Automation Platform",
+      "Workflow Orchestration & Job Processing Platform",
       "Clinix",
     ],
     badges: [],
@@ -249,7 +256,8 @@ const RELATIONS: Record<string, RelationData> = {
 
   MongoDB: {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
+      "Financial Risk & Debt Intelligence Platform",
       "Clinix",
     ],
     badges: [],
@@ -263,13 +271,12 @@ const RELATIONS: Record<string, RelationData> = {
 
   PostgreSQL: {
     projects: [
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
-      "Task Automation Platform",
+      "Workflow Orchestration & Job Processing Platform",
     ],
     badges: [],
     experience: [
       "Relational Database Design",
-      "Neon PostgreSQL",
+      "PostgreSQL",
       "Production Database Integration",
       "Structured Data Modeling",
     ],
@@ -277,7 +284,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   Prisma: {
     projects: [
-      "Task Automation Platform",
+      "Workflow Orchestration & Job Processing Platform",
     ],
     badges: [],
     experience: [
@@ -291,30 +298,26 @@ const RELATIONS: Record<string, RelationData> = {
   SQL: {
     projects: [
       "KrishiMitra AI",
-      "Task Automation Platform",
+      "Workflow Orchestration & Job Processing Platform",
     ],
     badges: [],
     experience: [
       "Relational Data",
       "Database Design",
-      "SQLAlchemy",
-      "PostgreSQL",
+      "SQL Queries",
+      "Structured Data Modeling",
     ],
   },
 
   Python: {
     projects: [
       "KrishiMitra AI",
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
     ],
-    badges: [
-      "AMD Slingshot — Top 10",
-      "ET Gen AI Hackathon — Semi-Finalist",
-    ],
+    badges: [],
     experience: [
-      "AI Application Development",
       "Backend Logic",
       "Data Processing",
+      "AI / ML Integration",
       "Model Integration",
     ],
   },
@@ -322,7 +325,6 @@ const RELATIONS: Record<string, RelationData> = {
   Flask: {
     projects: [
       "KrishiMitra AI",
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
     ],
     badges: [],
     experience: [
@@ -336,14 +338,10 @@ const RELATIONS: Record<string, RelationData> = {
   "Machine Learning": {
     projects: [
       "KrishiMitra AI",
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
     ],
-    badges: [
-      "AMD Slingshot — Top 10",
-      "ET Gen AI Hackathon — Semi-Finalist",
-    ],
+    badges: [],
     experience: [
-      "Model Training & Integration",
+      "Model Integration",
       "Prediction Pipelines",
       "Recommendation Systems",
       "AI-Assisted Applications",
@@ -382,12 +380,12 @@ const RELATIONS: Record<string, RelationData> = {
 
   "Gemini AI": {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
     ],
     badges: [],
     experience: [
       "Medical Report Analysis",
-      "AI-Generated Insights",
+      "AI-Assisted Insights",
       "Prompt Engineering",
       "LLM Integration",
     ],
@@ -395,7 +393,7 @@ const RELATIONS: Record<string, RelationData> = {
 
   OCR: {
     projects: [
-      "health-intelligence-report-insights-platform AI",
+      "Health Intelligence report insights platform",
     ],
     badges: [],
     experience: [
@@ -411,24 +409,22 @@ const RELATIONS: Record<string, RelationData> = {
       "DSA Practice",
       "Problem-Solving Practice",
     ],
-    badges: [
-      "ICPC Algo Queen — Rank 509",
-    ],
+    badges: [],
     experience: [
       "Data Structures & Algorithms",
       "Object-Oriented Programming",
-      "Competitive Problem Solving",
+      "Problem Solving",
       "Interview Preparation",
     ],
   },
 
   "Git/GitHub": {
     projects: [
+      "Health Intelligence report insights platform",
+      "Workflow Orchestration & Job Processing Platform",
+      "Financial Risk & Debt Intelligence Platform",
       "KrishiMitra AI",
-      "health-intelligence-report-insights-platform AI",
-      "https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
       "Clinix",
-      "Task Automation Platform",
       "Portfolio / Lab",
     ],
     badges: [],

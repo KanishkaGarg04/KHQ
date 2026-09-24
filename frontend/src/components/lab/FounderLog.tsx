@@ -63,7 +63,7 @@ const LOGS = [
     ts: "2026-04",
     tag: "HACKATHON",
     title: "AMD Regional Slingshot — Top 10",
-    body: "Built https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform, an AI-powered financial intelligence platform, and was selected among the Top 10 teams at the AMD Regional Slingshot Hackathon in Bhopal.",
+    body: "Built Financial-Risk-Debt-Intelligence-Platform, an AI-powered financial intelligence platform, and was selected among the Top 10 teams at the AMD Regional Slingshot Hackathon in Bhopal.",
     color: "var(--neon-cyan)",
   },
   {
@@ -76,8 +76,8 @@ const LOGS = [
   {
     ts: "2026-05",
     tag: "ITERATE",
-    title: "Reworked https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform",
-    body: "Returned to https://github.com/KanishkaGarg04/Financial-Risk-Debt-Intelligence-Platform and expanded the platform with additional modules, improving its functionality and turning the hackathon prototype into a more complete product.",
+    title: "Reworked Financial-Risk-Debt-Intelligence-Platform",
+    body: "Returned to Financial-Risk-Debt-Intelligence-Platform and expanded the platform with additional modules, improving its functionality and turning the hackathon prototype into a more complete product.",
     color: "var(--neon-cyan)",
   },
   {
