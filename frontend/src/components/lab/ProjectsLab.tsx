@@ -13,7 +13,7 @@ import { SectionHeader } from "./SectionHeader";
 
 const PROJECTS = [
   {
-    name: "Financial-Risk-Debt-Intelligence-Platform",
+    name: "Health Intelligence report insights platform",
     tag: "Healthcare · AI · Full Stack",
 
     github:
